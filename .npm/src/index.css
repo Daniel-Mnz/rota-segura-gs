@@ -1,1 +1,75 @@
 @import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --color-primary: var(--primary);
+  --color-surface: var(--surface);
+  --color-surface-secondary: var(--surface-secondary);
+  --color-secondary-text: var(--secondary-text);
+  --color-caution: var(--caution);
+  --color-danger: var(--danger);
+  --color-sos: var(--sos);
+}
+
+:root {
+  --background: #101418;
+  --foreground: #f1f2f4;
+
+  --brand: #276d65;
+  --brand-soft: #57978a;
+  --primary: #a0d8c1;
+
+  --surface: #242b32;
+  --surface-secondary: #303942;
+
+  --secondary-text: #b8c0c8;
+
+  --caution: #d9ad62;
+  --danger: #c77d68;
+  --sos: #c94f43;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--brand);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
